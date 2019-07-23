@@ -1,10 +1,8 @@
 <#
 .SYNOPSIS
-
 Unistalling kaspersky Endpoint Security using Windows Uninstallstring.
 
 .DESCRIPTION
-
 This script finds and removes (uninstall) Kaspersky Endpoint Security from a Windows 10 computer.
 This will also work on Windows 7 and Windows 8, but the Registry's path might change.
 

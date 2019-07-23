@@ -22,7 +22,7 @@ $uninstall32 = gci "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\
 $uninstall64 = gci "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" | foreach { gp $_.PSPath } | ? { $_ -match "Kaspersky Endpoint Security" } | select UninstallString
 
 if ($uninstall64) {
-#The following line removes unnecessary components of the uninstallation string. We are just basically extracting the "Uninstallstring" string.
+#The following line removes unnecessary components of the Uninstallstring string. We are just basically extracting the "Uninstallstring" string.
 $uninstall64 = $uninstall64.UninstallString -Replace "msiexec.exe","" -Replace "/I","" -Replace "/X","" 
 $uninstall64 = $uninstall64.Trim()
 Write "Uninstalling..."

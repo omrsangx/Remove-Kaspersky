@@ -26,11 +26,11 @@ if ($uninstall64) {
 $uninstall64 = $uninstall64.UninstallString -Replace "msiexec.exe","" -Replace "/I","" -Replace "/X","" 
 $uninstall64 = $uninstall64.Trim()
 Write "Uninstalling..."
-start-process "msiexec.exe" -arg "/X $uninstall64 /qb" -Wait}
+start-process "msiexec.exe" -arg "/X $uninstall64 KLLOGIN=KLAdmin KLPASSWD=<passwordhere> /qn" -Wait}
 
 if ($uninstall32) {
 $uninstall32 = $uninstall32.UninstallString -Replace "msiexec.exe","" -Replace "/I","" -Replace "/X",""
 $uninstall32 = $uninstall32.Trim()
 Write "Uninstalling..."
-start-process "msiexec.exe" -arg "/X $uninstall32 /qb" -Wait}
+start-process "msiexec.exe" -arg "/X $uninstall32 KLLOGIN=KLAdmin KLPASSWD=<passwordhere> /qn" -Wait}
 
